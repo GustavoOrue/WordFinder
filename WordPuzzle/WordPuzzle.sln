@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPuzzle.Console", "WordPuzzle.Console\WordPuzzle.Console.csproj", "{44070A52-34A0-482F-945E-12E5CEBFF726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPuzzle.Services", "WordPuzzle.Services\WordPuzzle.Services.csproj", "{5B44A332-9B7F-4688-950A-20B533757516}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B3AA4A1D-A570-4FE9-8F70-915F1348A640}"
+	ProjectSection(SolutionItems) = preProject
+		..\Qu Developer Challenge-Word Finder.pdf = ..\Qu Developer Challenge-Word Finder.pdf
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44070A52-34A0-482F-945E-12E5CEBFF726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44070A52-34A0-482F-945E-12E5CEBFF726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44070A52-34A0-482F-945E-12E5CEBFF726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44070A52-34A0-482F-945E-12E5CEBFF726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B44A332-9B7F-4688-950A-20B533757516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B44A332-9B7F-4688-950A-20B533757516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B44A332-9B7F-4688-950A-20B533757516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B44A332-9B7F-4688-950A-20B533757516}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA5A2A39-F653-4587-B3DD-9579E856C973}
+	EndGlobalSection
+EndGlobal
