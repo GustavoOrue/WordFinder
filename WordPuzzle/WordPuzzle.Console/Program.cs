@@ -152,7 +152,7 @@ internal class Program
                 "cold",
                 "wind"
             },
-    "The matrix cannot be null or empty", "Challenge example");
+    "The matrix cannot be null or empty.", "The matrix is empty");
         RunWordFinder(new List<string>
              {
                  "z",
@@ -227,13 +227,6 @@ internal class Program
                 "c"
             },
     "The matrix size exceeds the maximum allowed size of 64x64.", "Matrix with more than 64 rows");
-        RunWordFinder(new List<string>(), new List<string>
-            {
-                "chill",
-                "cold",
-                "wind"
-            },
-"The matrix cannot be null or empty", "Challenge example");
         RunWordFinder(new List<string>
              {
                  "zxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvbzxcvx",
@@ -244,6 +237,18 @@ internal class Program
                 "c"
             },
     "The matrix size exceeds the maximum allowed size of 64x64.", "Matrix with more than 64 columns");
+        RunWordFinder(new List<string>
+        {
+            "abcdc",
+            "igwi",
+            "chill",
+            "pqnsd",
+            "uvdxy"
+        }, new List<string>
+            {
+                "chill",
+            },
+        "All rows in the matrix must have the same length.", "The matrix have diferent lenght");
 
     }
 
@@ -263,7 +268,7 @@ internal class Program
             Console.WriteLine($"Words found: {wordFound} ({runFind.Count()})");
             Console.WriteLine($"Expected words: {expectedWords}");
             Console.WriteLine($"Result: {result}");
-            
+
         }
         catch (Exception ex)
         {

@@ -23,12 +23,21 @@ public class WordFinder
         }
 
         _matrix = new char[_numberOfRows, _numberOfCols];
-        for (int i = 0; i < _numberOfRows; i++)
+        int i = 0;
+
+        foreach (var row in matrix)
         {
+            if (row.Length != _numberOfCols)
+            {
+                throw new ArgumentException("All rows in the matrix must have the same length.");
+            }
+
             for (int j = 0; j < _numberOfCols; j++)
             {
-                _matrix[i, j] = matrixList[i][j];
+                _matrix[i, j] = row[j];
             }
+
+            i++;
         }
     }
 
@@ -52,21 +61,17 @@ public class WordFinder
 
     private bool AnyWordInMatrix(string word, out int count)
     {
-        count = 0;
-
         // Count occurrences in the rows (horizontal search)
-        for (int i = 0; i < _numberOfRows; i++)
-        {
-            string rowString = GetRow(i);
-            count += WordsInLine(rowString, word);
-        }
+        var rows = Enumerable.Range(0, _numberOfRows)
+                         .Select(row => GetRow(row))
+                         .Sum(rowString => WordsInLine(rowString, word));
 
-        // Count occurrences in the columns (vertical search)
-        for (int j = 0; j < _numberOfCols; j++)
-        {
-            string colString = GetCol(j);
-            count += WordsInLine(colString, word);
-        }
+        // Count occurrences in the columns(vertical search)
+        var cols = Enumerable.Range(0, _numberOfCols)
+                                 .Select(col => GetCol(col))
+                                 .Sum(colString => WordsInLine(colString, word));
+
+        count = rows + cols;
 
         return count > 0;
     }
@@ -90,23 +95,17 @@ public class WordFinder
     private string GetRow(int row)
     {
 
-        char[] rowChars = new char[_numberOfCols];
-        for (int j = 0; j < _numberOfCols; j++)
-        {
-            rowChars[j] = _matrix[row, j];
-        }
-        return new string(rowChars);
+        return new string(Enumerable.Range(0, _numberOfCols)
+                                          .Select(col => _matrix[row, col])
+                                          .ToArray());
     }
 
     // Returns the string for the specified col
 
     private string GetCol(int col)
     {
-        char[] colChars = new char[_numberOfRows];
-        for (int i = 0; i < _numberOfRows; i++)
-        {
-            colChars[i] = _matrix[i, col];
-        }
-        return new string(colChars);
+        return new string(Enumerable.Range(0, _numberOfRows)
+                                    .Select(row => _matrix[row, col])
+                                    .ToArray());
     }
 }
